@@ -7,12 +7,12 @@
     <initial-install-p>f</initial-install-p>
     <singleton-p>t</singleton-p>
 
-    <version name="0.2d" url="http://openacs.org/repository/download/apm/user-profile-0.2d.apm">
+    <version name="2.0.3" url="http://openacs.org/repository/download/apm/user-profile-2.0.3.apm">
         <owner url="http://openacs.org">OpenACS</owner>
-        <release-date>2003-11-10</release-date>
+        <release-date>2004-03-10</release-date>
         <vendor url="http://openacs.org">OpenACS</vendor>
 
-        <provides url="user-profile" version="0.2d"/>
+        <provides url="user-profile" version="2.0.3"/>
         <requires url="profile-provider" version="0.2d"/>
 
         <parameters>
