@@ -30,7 +30,7 @@ begin
     from rel_segments
     where segment_name = 'Profiled Users';
 
-    rel_segment.delete(
+    rel_segment.del(
         segment_id => foo
     );
 
@@ -41,7 +41,7 @@ begin
                               from acs_sc_impls
                               where impl_name = 'user_profile_provider');
 
-    profiled_group.delete(
+    profiled_group.del(
         group_id => foo
     );
 

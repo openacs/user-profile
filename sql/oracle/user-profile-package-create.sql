@@ -32,7 +32,7 @@ as
         creation_ip in acs_objects.creation_ip%TYPE default null
     ) return user_profile_rels.rel_id%TYPE;
 
-    procedure delete (
+    procedure del (
         rel_id in user_profile_rels.rel_id%TYPE
     );
 
@@ -83,16 +83,16 @@ as
         return v_rel_id;
     end;
 
-    procedure delete (
+    procedure del (
         rel_id in user_profile_rels.rel_id%TYPE
     )
     is
     begin
         delete
         from user_profile_rels
-        where rel_id = user_profile_rel.delete.rel_id;
+        where rel_id = user_profile_rel.del.rel_id;
 
-        membership_rel.delete(rel_id);
+        membership_rel.del(rel_id);
     end;
 
 end;
