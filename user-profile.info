@@ -27,6 +27,14 @@
             <file type="data_model" db_type="oracle" path="sql/oracle/user-profile-provider-create.sql"/>
             <file type="data_model" db_type="oracle" path="sql/oracle/user-profile-provider-drop.sql"/>
             <file type="data_model" db_type="oracle" path="sql/oracle/user-profile-sanitize.sql"/>
+            <file type="data_model_create" db_type="postgresql" path="sql/postgresql/user-profile-create.sql"/>
+            <file type="data_model_drop" db_type="postgresql" path="sql/postgresql/user-profile-drop.sql"/>
+            <file type="data_model" db_type="postgresql" path="sql/postgresql/user-profile-init.sql"/>
+            <file type="data_model" db_type="postgresql" path="sql/postgresql/user-profile-package-create.sql"/>
+            <file type="data_model" db_type="postgresql" path="sql/postgresql/user-profile-package-drop.sql"/>
+            <file type="data_model" db_type="postgresql" path="sql/postgresql/user-profile-provider-create.sql"/>
+            <file type="data_model" db_type="postgresql" path="sql/postgresql/user-profile-provider-drop.sql"/>
+            <file type="data_model" db_type="postgresql" path="sql/postgresql/user-profile-sanitize.sql"/>
             <file type="package_spec" path="user-profile.info"/>
         </files>
         <parameters>
