@@ -31,10 +31,12 @@ begin
         foo
     );
 
-    select acs_rel_type__drop_type(
+    perform acs_rel_type__drop_type(
         ''user_profile_rel'',
         ''t''
     );
+
+    return 0;
 
 end;
 ' language 'plpgsql';

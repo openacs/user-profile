@@ -5,7 +5,6 @@
 -- @version $Id$
 --
 
-drop function user_profile_rel__new(integer,varchar,integer,integer,integer,varchar);
+select drop_package('user_profile_rel');
 
-drop function user_profile_rel__delete(integer);
 
