@@ -15,8 +15,8 @@
         <owner url="mailto:yon@openforce.net">Yonatan Feldman</owner>
         <vendor url="http://openforce.net">OpenForce</vendor>
 
-        <provides url="user-profile" version="0.1"/>
-        <requires url="profile-provider" version="0.1"/>
+        <provides url="user-profile" version="0.1d"/>
+        <requires url="profile-provider" version="0.1d"/>
 
         <files>
             <file type="data_model_create" db_type="oracle" path="sql/oracle/user-profile-create.sql"/>
