@@ -51,7 +51,6 @@ BEGIN
         (v_rel_id);
 
         return v_rel_id;
-    end;	
 END;
 ' language 'plpgsql';
 
