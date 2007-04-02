@@ -13,7 +13,7 @@
         <vendor url="http://openacs.org">OpenACS</vendor>
 
         <provides url="user-profile" version="2.3.0a1"/>
-        <requires url="profile-provider" version="0.2d"/>
+        <requires url="profile-provider" version="2.3.0a1"/>
 
         <parameters>
         <!-- No version parameters -->
