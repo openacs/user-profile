@@ -11,15 +11,21 @@ select define_function_args ('user_profile_rel__new','rel_id,rel_type;user_profi
 select define_function_args ('user_profile_rel__delete','rel_id');
 
 
-create function user_profile_rel__new(integer,varchar,integer,integer,integer,varchar)
-returns integer as '
+
+
+--
+-- procedure user_profile_rel__new/6
+--
+CREATE OR REPLACE FUNCTION user_profile_rel__new(
+   p_rel_id integer,
+   p_rel_type varchar, -- default 'user_profile_rel'
+   p_group_id integer,
+   p_user_id integer,
+   p_creation_user integer,
+   p_creation_ip varchar
+
+) RETURNS integer AS $$
 DECLARE
-	p_rel_id		alias for $1;
-	p_rel_type		alias for $2;
-	p_group_id		alias for $3;
-	p_user_id		alias for $4;
-	p_creation_user		alias for $5;
-	p_creation_ip		alias for $6;
         v_rel_id                membership_rels.rel_id%TYPE;
         v_group_id              groups.group_id%TYPE;
 BEGIN
@@ -29,7 +35,7 @@ BEGIN
             from profiled_groups
             where profile_provider = (select min(impl_id)
                                       from acs_sc_impls
-                                      where impl_name = ''user_profile_provider'');
+                                      where impl_name = 'user_profile_provider');
         else
              v_group_id := p_group_id;
         end if;
@@ -39,7 +45,7 @@ BEGIN
             p_rel_type,
             v_group_id,
             p_user_id,
-	    ''approved'',
+	    'approved',
             p_creation_user,
             p_creation_ip
         );
@@ -52,13 +58,19 @@ BEGIN
 
         return v_rel_id;
 END;
-' language 'plpgsql';
+
+$$ LANGUAGE plpgsql;
 
 
-create function user_profile_rel__delete(integer)
-returns integer as '
+
+
+--
+-- procedure user_profile_rel__delete/1
+--
+CREATE OR REPLACE FUNCTION user_profile_rel__delete(
+   p_rel_id integer
+) RETURNS integer AS $$
 DECLARE
-	p_rel_id		alias for $1;
 BEGIN
         delete
         from user_profile_rels
@@ -68,4 +80,5 @@ BEGIN
 	
 	return 0;
 END;
-' language 'plpgsql';
+
+$$ LANGUAGE plpgsql;
